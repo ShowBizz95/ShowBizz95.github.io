@@ -1,238 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Rabbitman | Sustainable Rabbit Farming</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>Rabbitman | Sustainable Rabbit Farming</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background-color: #f5f7f4;
-      color: #333;
-      line-height: 1.6;
-    }
+<style>
+body {
+margin: 0;
+font-family: Arial, Helvetica, sans-serif;
+background-color: #f5f7f4;
+color: #333;
+line-height: 1.6;
+}
 
-    /* NAVIGATION */
-    nav {
-      background: #1f4f37;
-      padding: 15px 30px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
+/* NAVIGATION */
+nav {
+background: #1f4f37;
+padding: 15px 30px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+position: sticky;
+top: 0;
+z-index: 100;
+}
 
-    nav .logo {
-      color: #fff;
-      font-size: 1.5em;
-      font-weight: bold;
-    }
+nav .logo {
+color: #fff;
+font-size: 1.5em;
+font-weight: bold;
+}
 
-    nav a {
-      color: #fff;
-      margin-left: 20px;
-      text-decoration: none;
-      font-weight: bold;
-    }
+nav a {
+color: #fff;
+margin-left: 20px;
+text-decoration: none;
+font-weight: bold;
+}
 
-    /* HERO */
-    .hero {
-      position: relative;
+/* HERO */
+.hero {
+position: relative;
+      background-image: url("images/Rabbit 1.jpg");
       background-image: url("images/Rabbit1.jpg");
-      background-size: cover;
-      background-position: center;
-      padding: 160px 20px;
-      color: #fff;
-      text-align: center;
-    }
+background-size: cover;
+background-position: center;
+padding: 160px 20px;
+color: #fff;
+text-align: center;
+}
 
-    .hero::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: rgba(0,0,0,0.65);
-    }
+.hero::before {
+content: "";
+position: absolute;
+inset: 0;
+background: rgba(0,0,0,0.65);
+}
 
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      max-width: 850px;
-      margin: auto;
-    }
+.hero-content {
+position: relative;
+z-index: 2;
+max-width: 850px;
+margin: auto;
+}
 
-    .hero h1 {
-      font-size: 3.2em;
-      margin-bottom: 15px;
-      text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
-    }
-
-    .hero p {
-      font-size: 1.25em;
-      margin-bottom: 30px;
-    }
-
-    .hero a {
-      display: inline-block;
-      background: #2f6f4e;
-      color: #fff;
-      padding: 14px 30px;
-      text-decoration: none;
-      font-weight: bold;
-      border-radius: 4px;
-      font-size: 1.05em;
-    }
-
-    /* SECTIONS */
-    section {
-      max-width: 1100px;
-      margin: 60px auto;
-      background: #fff;
-      padding: 45px 30px;
-      border-radius: 8px;
-      box-shadow: 0 6px 14px rgba(0,0,0,0.06);
-    }
-
-    h2 {
-      color: #2f6f4e;
-      text-align: center;
-      margin-bottom: 35px;
-    }
-
-    /* CARDS */
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 25px;
-    }
-
-    .card {
-      background: #f9faf9;
-      padding: 22px;
-      border-radius: 6px;
-      text-align: center;
-    }
-
-    .card img {
-      width: 100%;
-      height: 190px;
-      object-fit: cover;
-      border-radius: 6px;
-      margin-bottom: 15px;
-    }
-
-    /* GALLERY */
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 18px;
-    }
-
-    .gallery img {
-      width: 100%;
-      height: 220px;
-      object-fit: cover;
-      border-radius: 6px;
-    }
-
-    /* FOOTER */
-    footer {
-      text-align: center;
-      padding: 35px 20px;
-      font-size: 0.9em;
-      color: #666;
-      background: #eef1ee;
-    }
-
-    /* WHATSAPP BUTTON */
-    .whatsapp {
-      position: fixed;
-      bottom: 22px;
-      right: 22px;
-      background: #25d366;
-      color: #fff;
-      padding: 15px 20px;
-      border-radius: 50px;
-      text-decoration: none;
-      font-weight: bold;
-      box-shadow: 0 6px 12px rgba(0,0,0,0.25);
-    }
-  </style>
-</head>
-
-<body>
-
-<nav>
-  <div class="logo">Rabbitman</div>
-  <div>
-    <a href="#about">About</a>
-    <a href="#why">Why Rabbits</a>
-    <a href="#products">Products</a>
-    <a href="#gallery">Gallery</a>
-    <a href="#contact">Contact</a>
-  </div>
-</nav>
-
-<div class="hero">
-  <div class="hero-content">
-    <h1>Sustainable & Ethical Rabbit Farming</h1>
-    <p>Supporting food security, income generation, and responsible rabbit farming in Namibia.</p>
-    <a href="#contact">Get in Touch</a>
-  </div>
-</div>
-
-<section id="about">
-  <h2>About Rabbitman</h2>
-  <p>
-    Rabbitman is a small-scale rabbit farming initiative based in Windhoek,
-    Namibia. The farm focuses on sustainable meat production, breeding,
-    and responsible animal care using practical, low-cost methods
-    suitable for local conditions.
-  </p>
-</section>
-
-<section id="why">
-  <h2>Why Rabbit Farming?</h2>
-  <div class="cards">
-    <div class="card">
+.hero h1 {
+font-size: 3.2em;
+margin-bottom: 15px;
+@@ -198,15 +198,15 @@
+<h2>Why Rabbit Farming?</h2>
+<div class="cards">
+<div class="card">
+      <img src="images/Rabbit 2.jpg" alt="Rabbit Meat">
       <img src="images/Rabbit2.jpg" alt="Rabbit Meat">
-      <p>Lean, nutritious meat with high protein content.</p>
-    </div>
-    <div class="card">
+<p>Lean, nutritious meat with high protein content.</p>
+</div>
+<div class="card">
+      <img src="images/Rabbit 3.jpg" alt="Bunny">
       <img src="images/Rabbit3.jpg" alt="Bunny">
-      <p>Low space and feed requirements.</p>
-    </div>
-    <div class="card">
+<p>Low space and feed requirements.</p>
+</div>
+<div class="card">
+      <img src="images/Rabbit 4.jpg" alt="Rabbit Farm">
       <img src="images/Rabbit4.jpg" alt="Rabbit Farm">
-      <p>Fast reproduction and quick returns for small farmers.</p>
-    </div>
-  </div>
-</section>
-
-<section id="products">
-  <h2>Products & Availability</h2>
-  <div class="cards">
-    <div class="card">
+<p>Fast reproduction and quick returns for small farmers.</p>
+</div>
+</div>
+@@ -216,15 +216,15 @@
+<h2>Products & Availability</h2>
+<div class="cards">
+<div class="card">
+      <img src="images/Rabbit 5.jpg" alt="Breeding Rabbits">
       <img src="images/Rabbit5.jpg" alt="Breeding Rabbits">
-      <p><strong>Breeding Rabbits</strong><br>Available on request</p>
-    </div>
-    <div class="card">
+<p><strong>Breeding Rabbits</strong><br>Available on request</p>
+</div>
+<div class="card">
+      <img src="images/Rabbit 6.jpg" alt="Rabbit Meat">
       <img src="images/Rabbit6.jpg" alt="Rabbit Meat">
-      <p><strong>Rabbit Meat</strong><br>Pre-orders only</p>
-    </div>
-    <div class="card">
+<p><strong>Rabbit Meat</strong><br>Pre-orders only</p>
+</div>
+<div class="card">
+      <img src="images/Rabbit 7.jpg" alt="Organic Manure">
       <img src="images/Rabbit7.jpg" alt="Organic Manure">
-      <p><strong>Organic Manure</strong><br>Limited supply</p>
-    </div>
-  </div>
-</section>
-
+<p><strong>Organic Manure</strong><br>Limited supply</p>
+</div>
+</div>
+@@ -233,31 +233,31 @@
 <section id="gallery">
-  <h2>Farm Gallery</h2>
-  <div class="gallery">
+<h2>Farm Gallery</h2>
+<div class="gallery">
+    <img src="images/Rabbit 8.jpg" alt="Rabbit 8">
+    <img src="images/Rabbit 9.jpg" alt="Rabbit 9">
+    <img src="images/Rabbit 10.jpg" alt="Rabbit 10">
+    <img src="images/Rabbit 11.jpg" alt="Rabbit 11">
+    <img src="images/Rabbit 12.jpg" alt="Rabbit 12">
+    <img src="images/Rabbit 13.jpg" alt="Rabbit 13">
+    <img src="images/Rabbit 14.jpg" alt="Rabbit 14">
     <img src="images/Rabbit8.jpg" alt="Rabbit 8">
     <img src="images/Rabbit9.jpg" alt="Rabbit 9">
     <img src="images/Rabbit10.jpg" alt="Rabbit 10">
@@ -240,23 +124,23 @@
     <img src="images/Rabbit12.jpg" alt="Rabbit 12">
     <img src="images/Rabbit13.jpg" alt="Rabbit 13">
     <img src="images/Rabbit14.jpg" alt="Rabbit 14">
-  </div>
+</div>
 </section>
 
 <section id="contact">
-  <h2>Contact</h2>
-  <p style="text-align:center;">
-    📧 <strong>namupalapaulus@gmail.com</strong><br>
-    📍 Unit 2352, Goreangab, Kariba Street, Windhoek, Namibia
-  </p>
+<h2>Contact</h2>
+<p style="text-align:center;">
+📧 <strong>namupalapaulus@gmail.com</strong><br>
+📍 Unit 2352, Goreangab, Kariba Street, Windhoek, Namibia
+</p>
 </section>
 
 <footer>
-  © 2026 Rabbitman — a subsidiary of Small Giant Investments cc
+© 2026 Rabbitman — a subsidiary of Small Giant Investments cc
 </footer>
 
 <a class="whatsapp" href="https://wa.me/264818988127" target="_blank">
-  WhatsApp Us
+WhatsApp Us
 </a>
 
 </body>
