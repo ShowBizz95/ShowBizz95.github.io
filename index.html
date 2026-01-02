@@ -2,48 +2,103 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Rabbitman | Sustainable Rabbit Farming</title>
+  <title>Rabbitman | Rabbit Farming in Namibia</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <style>
     body {
-      font-family: Arial, Helvetica, sans-serif;
       margin: 0;
-      padding: 0;
-      background-color: #f5f7f4;
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: #f5f6f7;
       color: #333;
       line-height: 1.6;
     }
-    header {
-      background-color: #2f6f4e;
-      color: #fff;
-      padding: 40px 20px;
-      text-align: center;
-    }
+
+    /* NAVBAR */
     nav {
-      background: #244f39;
-      padding: 10px;
-      text-align: center;
+      background: #1f5c3a;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
+
+    nav .logo {
+      font-size: 1.4em;
+      font-weight: bold;
+      color: #fff;
+    }
+
     nav a {
       color: #fff;
-      margin: 0 15px;
       text-decoration: none;
+      margin-left: 20px;
       font-weight: bold;
     }
-    section {
-      max-width: 1000px;
+
+    /* HERO */
+    .hero {
+      background-image: url("https://images.unsplash.com/photo-1584553421349-3557470bed79");
+      background-size: cover;
+      background-position: center;
+      color: #fff;
+      padding: 100px 20px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 2.8em;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 1.2em;
+      max-width: 700px;
       margin: auto;
+    }
+
+    /* SECTIONS */
+    section {
+      max-width: 1100px;
+      margin: auto;
+      padding: 50px 20px;
       background: #fff;
-      padding: 25px;
-      margin-top: 20px;
+      margin-top: 30px;
       border-radius: 6px;
     }
+
     h2 {
-      color: #2f6f4e;
+      color: #1f5c3a;
+      margin-bottom: 20px;
     }
+
+    /* CARDS */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: #f9faf9;
+      padding: 25px;
+      border-radius: 6px;
+      text-align: center;
+    }
+
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 6px;
+      margin-bottom: 15px;
+    }
+
+    /* FOOTER */
     footer {
       text-align: center;
-      padding: 20px;
+      padding: 25px;
+      margin-top: 40px;
       font-size: 0.9em;
       color: #666;
     }
@@ -52,64 +107,84 @@
 
 <body>
 
-<header>
-  <h1>Rabbitman </h1>
-  <p>Sustainable & Ethical Rabbit Farming</p>
-</header>
-
+<!-- NAVIGATION -->
 <nav>
-  <a href="#about">About</a>
-  <a href="#why">Why Rabbits</a>
-  <a href="#products">Products</a>
-  <a href="#plans">Future Plans</a>
-  <a href="#contact">Contact</a>
+  <div class="logo">Rabbitman</div>
+  <div>
+    <a href="#about">About</a>
+    <a href="#why">Why Rabbits</a>
+    <a href="#breeds">Breeds</a>
+    <a href="#contact">Contact</a>
+  </div>
 </nav>
 
-<section id="about">
-  <h2>About Rabbitman </h2>
+<!-- HERO -->
+<div class="hero">
+  <h1>Sustainable Rabbit Farming</h1>
   <p>
-    Rabbitman is a small-scale rabbit farming initiative focused on
-    sustainable meat production, breeding, and responsible animal care.
-    Our aim is to contribute to food security, income generation, and
-    practical farming solutions.
+    Practical, ethical rabbit farming focused on food security,
+    income generation, and quality breeding in Namibia.
+  </p>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <h2>About Rabbitman</h2>
+  <p>
+    Rabbitman Farms is an emerging rabbit farming initiative aimed at
+    producing healthy rabbits for meat, breeding, and future farmer support.
+    The project focuses on low-cost, sustainable, and scalable farming methods.
   </p>
 </section>
 
+<!-- WHY RABBITS -->
 <section id="why">
   <h2>Why Rabbit Farming?</h2>
-  <ul>
-    <li>High-quality, lean and nutritious meat</li>
-    <li>Low space and feed requirements</li>
-    <li>Fast reproduction and growth rates</li>
-    <li>Suitable for small-scale and urban farming</li>
-  </ul>
+  <div class="cards">
+    <div class="card">
+      <img src="https://source.unsplash.com/400x300/?rabbit">
+      <p>Rabbits produce lean, nutritious meat with high protein content.</p>
+    </div>
+    <div class="card">
+      <img src="https://source.unsplash.com/400x300/?rabbit-farm">
+      <p>They require minimal space and can be farmed efficiently.</p>
+    </div>
+    <div class="card">
+      <img src="https://source.unsplash.com/400x300/?bunny">
+      <p>Fast growth and reproduction make rabbits ideal for small-scale farming.</p>
+    </div>
+  </div>
 </section>
 
-<section id="products">
-  <h2>Products & Services</h2>
-  <ul>
-    <li>Breeding Rabbits</li>
-    <li>Rabbit Meat (on order)</li>
-    <li>Manure for Organic Fertiliser</li>
-    <li>Training & Starter Guidance (future)</li>
-  </ul>
+<!-- BREEDS -->
+<section id="breeds">
+  <h2>Our Focus Breeds</h2>
+  <div class="cards">
+    <div class="card">
+      <img src="https://source.unsplash.com/400x300/?white-rabbit">
+      <h3>New Zealand White</h3>
+      <p>Popular meat breed known for fast growth and good feed conversion.</p>
+    </div>
+    <div class="card">
+      <img src="https://source.unsplash.com/400x300/?californian-rabbit">
+      <h3>Californian</h3>
+      <p>Hardy breed suitable for warm climates and meat production.</p>
+    </div>
+    <div class="card">
+      <img src="https://source.unsplash.com/400x300/?rabbit-breeding">
+      <h3>Local Crossbreeds</h3>
+      <p>Adapted to local conditions and suitable for smallholder systems.</p>
+    </div>
+  </div>
 </section>
 
-<section id="plans">
-  <h2>Future Plans</h2>
-  <p>
-    The farm intends to expand into structured breeding programs,
-    value-added products, and farmer training to support rabbit farming
-    adoption in Namibia.
-  </p>
-</section>
-
+<!-- CONTACT -->
 <section id="contact">
   <h2>Contact</h2>
   <p>
     📧 Email: <strong>namupalapaulus@gmail.com</strong><br>
-    📍 Location: Unit 2352, Goreangab, Kariba Street, Windhoek, Namibia<br>
-    🌐 GitHub Pages Website
+    📍 Location: Unit 2352, Kariba Street, Goreangab, Windhoek, Namibia<br>
+    🌐 Website hosted on GitHub Pages
   </p>
 </section>
 
@@ -119,4 +194,3 @@
 
 </body>
 </html>
-
