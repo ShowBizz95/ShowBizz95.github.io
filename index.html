@@ -1,260 +1,281 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<title>Rabbitman | Sustainable Rabbit Farming</title>
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8" />
+  <title>Rabbitman | Sustainable Rabbit Farming</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<link rel="icon" type="image/png" href="images/favicon.png">
+  <!-- FAVICON -->
+  <link rel="icon" type="image/png" href="images/favicon.png">
 
-<style>
-html {
-  scroll-behavior: smooth;
-}
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: #f5f7f4;
+      color: #333;
+      line-height: 1.6;
+    }
 
-body {
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  background-color: #f5f7f4;
-  color: #333;
-  line-height: 1.6;
-}
+    /* NAVIGATION */
+    nav {
+      background: #1f4f37;
+      padding: 12px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
 
-/* NAVIGATION */
-nav {
-  background: #1f4f37;
-  padding: 12px 24px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
+    nav .logo a {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+    }
 
-.logo img {
-  height: 45px;
-}
+    nav .logo img {
+      height: 45px;
+      width: auto;
+      display: block;
+    }
 
-.nav-links {
-  display: flex;
-}
+    nav .nav-links a {
+      color: #ffffff;
+      margin-left: 22px;
+      text-decoration: none;     /* removes underline */
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
 
-.nav-links a {
-  color: #fff;
-  margin-left: 22px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: color 0.3s;
-}
+    nav .nav-links a:hover {
+      color: #a7e0b5;           /* hover color */
+    }
 
-.nav-links a:hover,
-.nav-links a.active {
-  color: #a7e0b5;
-}
+    /* HERO */
+    .hero {
+      position: relative;
+      background-image: url("images/Rabbit1.jpg");
+      background-size: cover;
+      background-position: center;
+      padding: 160px 20px;
+      color: #fff;
+      text-align: center;
+    }
 
-/* HAMBURGER */
-.menu-toggle {
-  display: none;
-  font-size: 26px;
-  color: white;
-  cursor: pointer;
-}
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.65);
+    }
 
-/* HERO */
-.hero {
-  position: relative;
-  background: url("images/Rabbit1.jpg") center/cover no-repeat;
-  padding: 160px 20px;
-  text-align: center;
-  color: white;
-}
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 850px;
+      margin: auto;
+    }
 
-.hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.65);
-}
+    .hero h1 {
+      font-size: 3.2em;
+      margin-bottom: 15px;
+    }
 
-.hero-content {
-  position: relative;
-  z-index: 1;
-}
+    /* CARDS */
+    .cards {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      padding: 20px;
+    }
 
-/* CARDS */
-.cards {
-  display: flex;
-  gap: 16px;
-  flex-wrap: wrap;
-  padding: 20px;
-}
+    .card {
+      background: #fff;
+      padding: 12px;
+      border-radius: 6px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+      flex: 1 1 220px;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
 
-.card {
-  background: white;
-  padding: 12px;
-  border-radius: 8px;
-  flex: 1 1 220px;
-  text-align: center;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    }
 
-.card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
-}
+    .card img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin-bottom: 8px;
+      transition: transform 0.3s ease;
+    }
 
-.card img {
-  width: 100%;
-  height: auto;
-  transition: transform 0.3s;
-}
+    .card:hover img {
+      transform: scale(1.05);
+    }
 
-.card:hover img {
-  transform: scale(1.05);
-}
+    /* GALLERY */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 10px;
+      padding: 12px;
+    }
 
-/* GALLERY (FIXED) */
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 12px;
-  padding: 12px;
-}
+    .gallery img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 6px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
 
-.gallery img {
-  width: 100%;
-  height: 180px;              /* FIX */
-  object-fit: cover;          /* FIX */
-  border-radius: 6px;
-  cursor: pointer;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
+    .gallery img:hover {
+      transform: scale(1.06);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
 
-.gallery img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-}
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #eee;
+    }
 
-/* LIGHTBOX */
-.lightbox {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.85);
-  justify-content: center;
-  align-items: center;
-  z-index: 2000;
-}
+    .whatsapp {
+      position: fixed;
+      right: 16px;
+      bottom: 16px;
+      background: #25d366;
+      color: white;
+      padding: 10px 14px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: transform 0.2s ease;
+    }
 
-.lightbox img {
-  max-width: 90%;
-  max-height: 90%;
-}
+    .whatsapp:hover {
+      transform: scale(1.05);
+    }
 
-.lightbox.active {
-  display: flex;
-}
+    @media (max-width: 600px) {
+      .hero {
+        padding: 120px 12px;
+      }
 
-/* FOOTER */
-footer {
-  text-align: center;
-  padding: 20px;
-  background: #eee;
-}
+      .hero h1 {
+        font-size: 2.2em;
+      }
 
-.whatsapp {
-  position: fixed;
-  right: 16px;
-  bottom: 16px;
-  background: #25d366;
-  color: white;
-  padding: 10px 14px;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: bold;
-}
+      nav {
+        padding: 10px 16px;
+      }
 
-/* MOBILE */
-@media (max-width: 700px) {
-  .menu-toggle {
-    display: block;
-  }
+      nav .logo img {
+        height: 38px;
+      }
 
-  .nav-links {
-    position: absolute;
-    top: 60px;
-    right: 0;
-    background: #1f4f37;
-    flex-direction: column;
-    width: 200px;
-    display: none;
-  }
-
-  .nav-links a {
-    padding: 12px;
-    margin: 0;
-    border-top: 1px solid rgba(255,255,255,0.2);
-  }
-
-  .nav-links.show {
-    display: flex;
-  }
-
-  .gallery img {
-    height: 150px;   /* smaller on mobile */
-  }
-}
-</style>
+      nav .nav-links a {
+        margin-left: 14px;
+        font-size: 0.95em;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<nav>
-  <a class="logo" href="#top">
-    <img src="images/smallgiantlogo.png" alt="Small Giant Investments Logo">
+  <nav>
+    <div class="logo">
+      <a href="#top">
+        <img src="images/smallgiantlogo.png" alt="Small Giant Investments Logo">
+      </a>
+    </div>
+
+    <div class="nav-links">
+      <a href="#why">Why</a>
+      <a href="#products">Products</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <section id="top" class="hero">
+    <div class="hero-content">
+      <h1>Sustainable Rabbit Farming</h1>
+      <p>Practical, eco-friendly rabbit farming for smallholders.</p>
+    </div>
+  </section>
+
+  <section id="why">
+    <h2 style="text-align:center; padding-top:20px;">Why Rabbit Farming?</h2>
+    <div class="cards">
+      <div class="card">
+        <img src="images/Rabbit2.jpg" alt="Rabbit Meat">
+        <p>Lean, nutritious meat with high protein content.</p>
+      </div>
+      <div class="card">
+        <img src="images/Rabbit3.jpg" alt="Bunny">
+        <p>Low space and feed requirements.</p>
+      </div>
+      <div class="card">
+        <img src="images/Rabbit4.jpg" alt="Rabbit Farm">
+        <p>Fast reproduction and quick returns for small farmers.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="products">
+    <h2 style="text-align:center; padding-top:8px;">Products &amp; Availability</h2>
+    <div class="cards">
+      <div class="card">
+        <img src="images/Rabbit5.jpg" alt="Breeding Rabbits">
+        <p><strong>Breeding Rabbits</strong><br>Available on request</p>
+      </div>
+      <div class="card">
+        <img src="images/Rabbit6.jpg" alt="Rabbit Meat">
+        <p><strong>Rabbit Meat</strong><br>Pre-orders only</p>
+      </div>
+      <div class="card">
+        <img src="images/Rabbit7.jpg" alt="Organic Manure">
+        <p><strong>Organic Manure</strong><br>Limited supply</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="gallery">
+    <h2 style="text-align:center; padding-top:8px;">Farm Gallery</h2>
+    <div class="gallery">
+      <img src="images/Rabbit8.jpg" alt="Rabbit 8">
+      <img src="images/Rabbit9.jpg" alt="Rabbit 9">
+      <img src="images/Rabbit10.jpg" alt="Rabbit 10">
+      <img src="images/Rabbit11.jpg" alt="Rabbit 11">
+      <img src="images/Rabbit12.jpg" alt="Rabbit 12">
+      <img src="images/Rabbit13.jpg" alt="Rabbit 13">
+      <img src="images/Rabbit14.jpg" alt="Rabbit 14">
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2 style="text-align:center; padding-top:8px;">Contact</h2>
+    <p style="text-align:center;">
+      📧 <strong>namupalapaulus@gmail.com</strong><br>
+      📱 <strong>+264 81 8988 127</strong><br>
+      📍 Unit 2352, Goreangab, Kariba Street, Windhoek, Namibia
+    </p>
+  </section>
+
+  <footer>
+    © 2026 Rabbitman — a subsidiary of Small Giant Investments cc
+  </footer>
+
+  <a class="whatsapp" href="https://wa.me/264818988127" target="_blank" rel="noopener">
+    WhatsApp Us
   </a>
 
-  <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-
-  <div class="nav-links" id="navLinks">
-    <a href="#why">Why</a>
-    <a href="#products">Products</a>
-    <a href="#gallery">Gallery</a>
-    <a href="#contact">Contact</a>
-  </div>
-</nav>
-
-<section id="top" class="hero">
-  <div class="hero-content">
-    <h1>Sustainable Rabbit Farming</h1>
-    <p>Practical, eco-friendly rabbit farming for smallholders.</p>
-  </div>
-</section>
-
-<section id="why">
-  <h2 style="text-align:center;">Why Rabbit Farming?</h2>
-  <div class="cards">
-    <div class="card"><img src="images/Rabbit2.jpg"><p>Lean, nutritious meat.</p></div>
-    <div class="card"><img src="images/Rabbit3.jpg"><p>Low space & feed needs.</p></div>
-    <div class="card"><img src="images/Rabbit4.jpg"><p>Fast reproduction.</p></div>
-  </div>
-</section>
-
-<section id="products">
-  <h2 style="text-align:center;">Products & Availability</h2>
-  <div class="cards">
-    <div class="card"><img src="images/Rabbit5.jpg"><p><b>Breeding Rabbits</b></p></div>
-    <div class="card"><img src="images/Rabbit6.jpg"><p><b>Rabbit Meat</b></p></div>
-    <div class="card"><img src="images/Rabbit7.jpg"><p><b>Organic Manure</b></p></div>
-  </div>
-</section>
-
-<section id="gallery">
-  <h2 style="text-align:center;">Farm Gallery</h2>
-  <div class="gallery">
-    <img src="images/Rabbit8.jpg">
-    <img src="images/Rabbit9.jpg">
-    <img src="images/Rabbit10.jpg">
-    <img src="images/Rabbit11.jpg">
-    <img src="images/Rabbit12.jpg">
+</body>
+</html>
