@@ -26,10 +26,10 @@
       z-index: 100;
     }
 
-    nav .logo {
-      color: #fff;
-      font-size: 1.5em;
-      font-weight: bold;
+    nav .logo img {
+      height: 45px;
+      width: auto;
+      display: block;
     }
 
     nav a {
@@ -42,7 +42,6 @@
     /* HERO */
     .hero {
       position: relative;
-      /* NOTE: folder name is "Images" in your repo, so use that exact capitalization */
       background-image: url("images/Rabbit1.jpg");
       background-size: cover;
       background-position: center;
@@ -70,7 +69,7 @@
       margin-bottom: 15px;
     }
 
-    /* simple card/gallery styles */
+    /* CARDS */
     .cards {
       display: flex;
       gap: 16px;
@@ -94,11 +93,12 @@
       margin-bottom: 8px;
     }
 
+    /* GALLERY */
     .gallery {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
       gap: 10px;
-      padding: 0 10px 30px;
+      padding: 12px;
     }
 
     .gallery img {
@@ -134,12 +134,19 @@
       nav {
         padding: 12px;
       }
+      nav .logo img {
+        height: 38px;
+      }
     }
   </style>
 </head>
+
 <body>
+
   <nav>
-    <div class="logo">Rabbitman</div>
+    <div class="logo">
+      <img src="images/smallgiantlogo.png" alt="Small Giant Investments Logo">
+    </div>
     <div>
       <a href="#why">Why</a>
       <a href="#products">Products</a>
@@ -159,15 +166,15 @@
     <h2 style="text-align:center; padding-top:20px;">Why Rabbit Farming?</h2>
     <div class="cards">
       <div class="card">
-        <img src="images/Rabbit2.jpg" alt="Rabbit Meat" />
+        <img src="images/Rabbit2.jpg" alt="Rabbit Meat">
         <p>Lean, nutritious meat with high protein content.</p>
       </div>
       <div class="card">
-        <img src="images/Rabbit3.jpg" alt="Bunny" />
+        <img src="images/Rabbit3.jpg" alt="Bunny">
         <p>Low space and feed requirements.</p>
       </div>
       <div class="card">
-        <img src="images/Rabbit4.jpg" alt="Rabbit Farm" />
+        <img src="images/Rabbit4.jpg" alt="Rabbit Farm">
         <p>Fast reproduction and quick returns for small farmers.</p>
       </div>
     </div>
@@ -177,38 +184,38 @@
     <h2 style="text-align:center; padding-top:8px;">Products &amp; Availability</h2>
     <div class="cards">
       <div class="card">
-        <img src="images/Rabbit5.jpg" alt="Breeding Rabbits" />
-        <p><strong>Breeding Rabbits</strong><br />Available on request</p>
+        <img src="images/Rabbit5.jpg" alt="Breeding Rabbits">
+        <p><strong>Breeding Rabbits</strong><br>Available on request</p>
       </div>
       <div class="card">
-        <img src="images/Rabbit6.jpg" alt="Rabbit Meat" />
-        <p><strong>Rabbit Meat</strong><br />Pre-orders only</p>
+        <img src="images/Rabbit6.jpg" alt="Rabbit Meat">
+        <p><strong>Rabbit Meat</strong><br>Pre-orders only</p>
       </div>
       <div class="card">
-        <img src="images/Rabbit7.jpg" alt="Organic Manure" />
-        <p><strong>Organic Manure</strong><br />Limited supply</p>
+        <img src="images/Rabbit7.jpg" alt="Organic Manure">
+        <p><strong>Organic Manure</strong><br>Limited supply</p>
       </div>
     </div>
   </section>
 
   <section id="gallery">
     <h2 style="text-align:center; padding-top:8px;">Farm Gallery</h2>
-    <div class="gallery" style="padding: 12px;">
-      <img src="images/Rabbit8.jpg"  alt="Rabbit 8"  />
-      <img src="images/Rabbit9.jpg"  alt="Rabbit 9"  />
-      <img src="images/Rabbit10.jpg" alt="Rabbit 10" />
-      <img src="images/Rabbit11.jpg" alt="Rabbit 11" />
-      <img src="images/Rabbit12.jpg" alt="Rabbit 12" />
-      <img src="images/Rabbit13.jpg" alt="Rabbit 13" />
-      <img src="images/Rabbit14.jpg" alt="Rabbit 14" />
+    <div class="gallery">
+      <img src="images/Rabbit8.jpg" alt="Rabbit 8">
+      <img src="images/Rabbit9.jpg" alt="Rabbit 9">
+      <img src="images/Rabbit10.jpg" alt="Rabbit 10">
+      <img src="images/Rabbit11.jpg" alt="Rabbit 11">
+      <img src="images/Rabbit12.jpg" alt="Rabbit 12">
+      <img src="images/Rabbit13.jpg" alt="Rabbit 13">
+      <img src="images/Rabbit14.jpg" alt="Rabbit 14">
     </div>
   </section>
 
   <section id="contact">
     <h2 style="text-align:center; padding-top:8px;">Contact</h2>
     <p style="text-align:center;">
-      📧 <strong>namupalapaulus@gmail.com</strong><br />
-      📱 <strong>+264 81 8988 127</strong><br />
+      📧 <strong>namupalapaulus@gmail.com</strong><br>
+      📱 <strong>+264 81 8988 127</strong><br>
       📍 Unit 2352, Goreangab, Kariba Street, Windhoek, Namibia
     </p>
   </section>
@@ -217,6 +224,9 @@
     © 2026 Rabbitman — a subsidiary of Small Giant Investments cc
   </footer>
 
-  <a class="whatsapp" href="https://wa.me/264818988127" target="_blank" rel="noopener">WhatsApp Us</a>
+  <a class="whatsapp" href="https://wa.me/264818988127" target="_blank" rel="noopener">
+    WhatsApp Us
+  </a>
+
 </body>
 </html>
