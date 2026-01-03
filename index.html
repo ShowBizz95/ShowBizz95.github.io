@@ -5,6 +5,9 @@
   <title>Rabbitman | Sustainable Rabbit Farming</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
+  <!-- FAVICON -->
+  <link rel="icon" type="image/png" href="images/favicon.png">
+
   <style>
     body {
       margin: 0;
@@ -17,7 +20,7 @@
     /* NAVIGATION */
     nav {
       background: #1f4f37;
-      padding: 15px 30px;
+      padding: 12px 30px;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -26,17 +29,27 @@
       z-index: 100;
     }
 
+    nav .logo a {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+    }
+
     nav .logo img {
       height: 45px;
       width: auto;
       display: block;
     }
 
-    nav a {
+    nav .nav-links a {
       color: #fff;
-      margin-left: 20px;
+      margin-left: 22px;
       text-decoration: none;
       font-weight: bold;
+    }
+
+    nav .nav-links a:hover {
+      text-decoration: underline;
     }
 
     /* HERO */
@@ -122,20 +135,29 @@
       padding: 10px 14px;
       border-radius: 8px;
       text-decoration: none;
+      font-weight: bold;
     }
 
     @media (max-width: 600px) {
       .hero {
         padding: 120px 12px;
       }
+
       .hero h1 {
         font-size: 2.2em;
       }
+
       nav {
-        padding: 12px;
+        padding: 10px 16px;
       }
+
       nav .logo img {
         height: 38px;
+      }
+
+      nav .nav-links a {
+        margin-left: 14px;
+        font-size: 0.95em;
       }
     }
   </style>
@@ -145,9 +167,12 @@
 
   <nav>
     <div class="logo">
-      <img src="images/smallgiantlogo.png" alt="Small Giant Investments Logo">
+      <a href="#top">
+        <img src="images/smallgiantlogo.png" alt="Small Giant Investments Logo">
+      </a>
     </div>
-    <div>
+
+    <div class="nav-links">
       <a href="#why">Why</a>
       <a href="#products">Products</a>
       <a href="#gallery">Gallery</a>
@@ -155,7 +180,7 @@
     </div>
   </nav>
 
-  <section class="hero">
+  <section id="top" class="hero">
     <div class="hero-content">
       <h1>Sustainable Rabbit Farming</h1>
       <p>Practical, eco-friendly rabbit farming for smallholders.</p>
