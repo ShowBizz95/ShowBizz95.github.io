@@ -2,186 +2,640 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>Rabbitman | Sustainable Rabbit Farming</title>
+  <title>Rabbitman | Sustainable Rabbit Farming Solutions</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-
+  <meta name="description" content="Sustainable rabbit farming for smallholders - breeding rabbits, nutritious meat, and organic manure. A subsidiary of Small Giant Investments.">
+  
   <!-- FAVICON -->
   <link rel="icon" type="image/png" href="images/favicon.png">
-
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
   <style>
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background-color: #f5f7f4;
-      color: #333;
-      line-height: 1.6;
+    /* ====== GLOBAL STYLES ====== */
+    :root {
+      --primary-color: #1f4f37;
+      --secondary-color: #3a7d5c;
+      --accent-color: #d4af37;
+      --light-color: #f5f7f4;
+      --dark-color: #2c3e29;
+      --text-color: #333;
+      --text-light: #666;
+      --white: #ffffff;
+      --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      --transition: all 0.3s ease;
     }
-
-    /* NAVIGATION */
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--light-color);
+      color: var(--text-color);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    
+    h1, h2, h3, h4 {
+      font-weight: 600;
+      line-height: 1.3;
+      color: var(--dark-color);
+    }
+    
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    
+    section {
+      padding: 60px 20px;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .section-title {
+      text-align: center;
+      margin-bottom: 50px;
+      position: relative;
+    }
+    
+    .section-title h2 {
+      font-size: 2.2rem;
+      display: inline-block;
+      padding-bottom: 10px;
+    }
+    
+    .section-title h2::after {
+      content: '';
+      position: absolute;
+      width: 80px;
+      height: 4px;
+      background-color: var(--accent-color);
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      border-radius: 2px;
+    }
+    
+    /* ====== NAVIGATION ====== */
     nav {
-      background: #1f4f37;
-      padding: 12px 30px;
+      background: var(--primary-color);
+      padding: 15px 30px;
       display: flex;
       justify-content: space-between;
       align-items: center;
       position: sticky;
       top: 0;
-      z-index: 100;
+      z-index: 1000;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     }
-
-    nav .logo a {
+    
+    .logo-container {
       display: flex;
       align-items: center;
-      text-decoration: none;
+      gap: 15px;
     }
-
-    nav .logo img {
-      height: 45px;
+    
+    .logo {
+      height: 50px;
       width: auto;
       display: block;
+      background-color: var(--white);
+      padding: 5px;
+      border-radius: 6px;
     }
-
-    nav .nav-links a {
-      color: #ffffff;
-      margin-left: 22px;
-      text-decoration: none;     /* removes underline */
-      font-weight: bold;
-      transition: color 0.3s ease;
+    
+    .brand-name {
+      color: var(--white);
+      font-size: 1.4rem;
+      font-weight: 600;
     }
-
-    nav .nav-links a:hover {
-      color: #a7e0b5;           /* hover color */
+    
+    .brand-name span {
+      color: var(--accent-color);
     }
-
-    /* HERO */
+    
+    .nav-links {
+      display: flex;
+      gap: 25px;
+    }
+    
+    .nav-links a {
+      color: var(--white);
+      font-weight: 500;
+      padding: 8px 0;
+      position: relative;
+      transition: var(--transition);
+    }
+    
+    .nav-links a:hover {
+      color: var(--accent-color);
+    }
+    
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      background-color: var(--accent-color);
+      bottom: 0;
+      left: 0;
+      transition: var(--transition);
+    }
+    
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+    
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--white);
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+    
+    /* ====== HERO SECTION ====== */
     .hero {
       position: relative;
-      background-image: url("images/Rabbit1.jpg");
+      background: linear-gradient(rgba(31, 79, 55, 0.85), rgba(31, 79, 55, 0.8)), 
+                  url("images/Rabbit1.jpg");
       background-size: cover;
       background-position: center;
+      background-attachment: fixed;
       padding: 160px 20px;
-      color: #fff;
+      color: var(--white);
       text-align: center;
+      overflow: hidden;
     }
-
-    .hero::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.65);
-    }
-
+    
     .hero-content {
+      max-width: 800px;
+      margin: 0 auto;
       position: relative;
       z-index: 2;
-      max-width: 850px;
-      margin: auto;
     }
-
+    
     .hero h1 {
-      font-size: 3.2em;
-      margin-bottom: 15px;
+      font-size: 3.5rem;
+      margin-bottom: 20px;
+      color: var(--white);
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
     }
-
-    /* CARDS */
-    .cards {
+    
+    .hero p {
+      font-size: 1.3rem;
+      margin-bottom: 30px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      opacity: 0.9;
+    }
+    
+    .cta-button {
+      display: inline-block;
+      background-color: var(--accent-color);
+      color: var(--dark-color);
+      padding: 14px 32px;
+      border-radius: 30px;
+      font-weight: 600;
+      font-size: 1.1rem;
+      transition: var(--transition);
+      margin-top: 10px;
+      border: 2px solid var(--accent-color);
+    }
+    
+    .cta-button:hover {
+      background-color: transparent;
+      color: var(--accent-color);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    /* ====== WHY SECTION ====== */
+    .features {
       display: flex;
-      gap: 16px;
       flex-wrap: wrap;
-      padding: 20px;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 40px;
     }
-
-    .card {
-      background: #fff;
-      padding: 12px;
-      border-radius: 6px;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
-      flex: 1 1 220px;
+    
+    .feature-card {
+      background: var(--white);
+      border-radius: 12px;
+      padding: 30px;
+      flex: 1;
+      min-width: 280px;
+      max-width: 350px;
       text-align: center;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+      border-top: 4px solid var(--secondary-color);
     }
-
-    .card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    
+    .feature-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
     }
-
-    .card img {
-      max-width: 100%;
-      height: auto;
-      display: block;
-      margin-bottom: 8px;
-      transition: transform 0.3s ease;
+    
+    .feature-icon {
+      font-size: 2.5rem;
+      color: var(--secondary-color);
+      margin-bottom: 20px;
     }
-
-    .card:hover img {
-      transform: scale(1.05);
+    
+    .feature-card h3 {
+      font-size: 1.4rem;
+      margin-bottom: 15px;
+      color: var(--primary-color);
     }
-
-    /* GALLERY */
-    .gallery {
+    
+    .feature-card p {
+      color: var(--text-light);
+      font-size: 1rem;
+    }
+    
+    /* ====== PRODUCTS SECTION ====== */
+    #products {
+      background-color: rgba(31, 79, 55, 0.05);
+    }
+    
+    .products-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-      gap: 10px;
-      padding: 12px;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
     }
-
-    .gallery img {
+    
+    .product-card {
+      background: var(--white);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+    }
+    
+    .product-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+    }
+    
+    .product-img {
+      height: 200px;
+      overflow: hidden;
+    }
+    
+    .product-img img {
       width: 100%;
-      height: auto;
-      display: block;
-      border-radius: 6px;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      height: 100%;
+      object-fit: cover;
+      transition: var(--transition);
     }
-
-    .gallery img:hover {
-      transform: scale(1.06);
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    }
-
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: #eee;
-    }
-
-    .whatsapp {
-      position: fixed;
-      right: 16px;
-      bottom: 16px;
-      background: #25d366;
-      color: white;
-      padding: 10px 14px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: transform 0.2s ease;
-    }
-
-    .whatsapp:hover {
+    
+    .product-card:hover .product-img img {
       transform: scale(1.05);
     }
-
-    @media (max-width: 600px) {
-      .hero {
-        padding: 120px 12px;
-      }
-
+    
+    .product-info {
+      padding: 25px;
+    }
+    
+    .product-info h3 {
+      font-size: 1.3rem;
+      margin-bottom: 10px;
+      color: var(--primary-color);
+    }
+    
+    .availability {
+      display: inline-block;
+      background-color: var(--accent-color);
+      color: var(--dark-color);
+      padding: 5px 15px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-top: 10px;
+    }
+    
+    /* ====== GALLERY SECTION ====== */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 40px;
+    }
+    
+    .gallery-item {
+      position: relative;
+      border-radius: 10px;
+      overflow: hidden;
+      height: 250px;
+      box-shadow: var(--shadow);
+    }
+    
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: var(--transition);
+    }
+    
+    .gallery-item:hover img {
+      transform: scale(1.1);
+    }
+    
+    .gallery-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(transparent, rgba(31, 79, 55, 0.8));
+      padding: 20px;
+      opacity: 0;
+      transition: var(--transition);
+    }
+    
+    .gallery-item:hover .gallery-overlay {
+      opacity: 1;
+    }
+    
+    /* ====== CONTACT SECTION ====== */
+    #contact {
+      background-color: var(--primary-color);
+      color: var(--white);
+    }
+    
+    #contact .section-title h2 {
+      color: var(--white);
+    }
+    
+    #contact .section-title h2::after {
+      background-color: var(--accent-color);
+    }
+    
+    .contact-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 50px;
+      justify-content: center;
+      margin-top: 40px;
+    }
+    
+    .contact-info {
+      flex: 1;
+      min-width: 300px;
+    }
+    
+    .contact-details {
+      margin-top: 30px;
+    }
+    
+    .contact-item {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 25px;
+    }
+    
+    .contact-icon {
+      background-color: var(--accent-color);
+      color: var(--dark-color);
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      margin-right: 15px;
+      flex-shrink: 0;
+    }
+    
+    .contact-text h4 {
+      color: var(--accent-color);
+      margin-bottom: 5px;
+      font-size: 1.1rem;
+    }
+    
+    .contact-text p {
+      opacity: 0.9;
+    }
+    
+    .contact-form {
+      flex: 1;
+      min-width: 300px;
+      background-color: var(--white);
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: var(--shadow);
+    }
+    
+    .contact-form h3 {
+      color: var(--primary-color);
+      margin-bottom: 25px;
+      text-align: center;
+    }
+    
+    .form-group {
+      margin-bottom: 20px;
+    }
+    
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+      padding: 12px 15px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      font-family: inherit;
+      font-size: 1rem;
+    }
+    
+    .form-group textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+    
+    .submit-btn {
+      background-color: var(--primary-color);
+      color: var(--white);
+      border: none;
+      padding: 14px 30px;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      width: 100%;
+      transition: var(--transition);
+    }
+    
+    .submit-btn:hover {
+      background-color: var(--secondary-color);
+    }
+    
+    /* ====== FOOTER ====== */
+    footer {
+      background-color: var(--dark-color);
+      color: var(--white);
+      padding: 40px 20px;
+      text-align: center;
+    }
+    
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .footer-logo {
+      height: 40px;
+      margin-bottom: 20px;
+    }
+    
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin: 30px 0;
+    }
+    
+    .footer-links a {
+      color: var(--white);
+      transition: var(--transition);
+    }
+    
+    .footer-links a:hover {
+      color: var(--accent-color);
+    }
+    
+    .copyright {
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding-top: 20px;
+      margin-top: 20px;
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
+    
+    /* ====== WHATSAPP BUTTON ====== */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background-color: #25D366;
+      color: var(--white);
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+      z-index: 999;
+      transition: var(--transition);
+    }
+    
+    .whatsapp-float:hover {
+      background-color: #128C7E;
+      transform: scale(1.1);
+    }
+    
+    /* ====== RESPONSIVE DESIGN ====== */
+    @media (max-width: 992px) {
       .hero h1 {
-        font-size: 2.2em;
+        font-size: 2.8rem;
       }
-
+      
+      .hero p {
+        font-size: 1.2rem;
+      }
+      
+      .section-title h2 {
+        font-size: 2rem;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .nav-links {
+        position: fixed;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        background-color: var(--primary-color);
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 0;
+        display: none;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+      }
+      
+      .nav-links.active {
+        display: flex;
+      }
+      
+      .mobile-menu-btn {
+        display: block;
+      }
+      
+      .hero {
+        padding: 120px 20px;
+      }
+      
+      .hero h1 {
+        font-size: 2.3rem;
+      }
+      
+      .hero p {
+        font-size: 1.1rem;
+      }
+      
+      section {
+        padding: 50px 20px;
+      }
+      
+      .gallery-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      }
+    }
+    
+    @media (max-width: 576px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+      
+      .hero p {
+        font-size: 1rem;
+      }
+      
+      .section-title h2 {
+        font-size: 1.8rem;
+      }
+      
+      .brand-name {
+        font-size: 1.2rem;
+      }
+      
+      .logo {
+        height: 40px;
+      }
+      
       nav {
-        padding: 10px 16px;
+        padding: 12px 20px;
       }
-
-      nav .logo img {
-        height: 38px;
-      }
-
-      nav .nav-links a {
-        margin-left: 14px;
-        font-size: 0.95em;
+      
+      .whatsapp-float {
+        bottom: 20px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
       }
     }
   </style>
@@ -189,93 +643,307 @@
 
 <body>
 
-  <nav>
-    <div class="logo">
-      <a href="#top">
-        <img src="images/smallgiantlogo.png" alt="Small Giant Investments Logo">
-      </a>
-    </div>
+  <!-- WhatsApp Float Button -->
+  <a class="whatsapp-float" href="https://wa.me/264818988127" target="_blank" rel="noopener">
+    <i class="fab fa-whatsapp"></i>
+  </a>
 
-    <div class="nav-links">
-      <a href="#why">Why</a>
+  <!-- Navigation -->
+  <nav>
+    <div class="logo-container">
+      <img class="logo" src="images/smallgiantlogo.png" alt="Rabbitman Logo">
+      <div class="brand-name">Rabbit<span>man</span></div>
+    </div>
+    
+    <button class="mobile-menu-btn" id="mobileMenuBtn">
+      <i class="fas fa-bars"></i>
+    </button>
+    
+    <div class="nav-links" id="navLinks">
+      <a href="#top">Home</a>
+      <a href="#why">Why Rabbit Farming</a>
       <a href="#products">Products</a>
       <a href="#gallery">Gallery</a>
       <a href="#contact">Contact</a>
     </div>
   </nav>
 
+  <!-- Hero Section -->
   <section id="top" class="hero">
     <div class="hero-content">
-      <h1>Sustainable Rabbit Farming</h1>
-      <p>Practical, eco-friendly rabbit farming for smallholders.</p>
+      <h1>Sustainable Rabbit Farming Solutions</h1>
+      <p>Practical, eco-friendly rabbit farming for smallholders. High-quality breeding rabbits, nutritious meat, and organic fertilizer for sustainable agriculture.</p>
+      <a href="#contact" class="cta-button">
+        <i class="fas fa-envelope"></i> Get In Touch
+      </a>
     </div>
   </section>
 
+  <!-- Why Rabbit Farming Section -->
   <section id="why">
-    <h2 style="text-align:center; padding-top:20px;">Why Rabbit Farming?</h2>
-    <div class="cards">
-      <div class="card">
-        <img src="images/Rabbit2.jpg" alt="Rabbit Meat">
-        <p>Lean, nutritious meat with high protein content.</p>
+    <div class="container">
+      <div class="section-title">
+        <h2>Why Rabbit Farming?</h2>
       </div>
-      <div class="card">
-        <img src="images/Rabbit3.jpg" alt="Bunny">
-        <p>Low space and feed requirements.</p>
-      </div>
-      <div class="card">
-        <img src="images/Rabbit4.jpg" alt="Rabbit Farm">
-        <p>Fast reproduction and quick returns for small farmers.</p>
+      
+      <div class="features">
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-drumstick-bite"></i>
+          </div>
+          <h3>Nutritious Meat</h3>
+          <p>Lean, high-protein meat with low cholesterol. Healthier alternative to traditional meats with excellent nutritional value.</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-leaf"></i>
+          </div>
+          <h3>Eco-Friendly</h3>
+          <p>Low space and feed requirements. Small carbon footprint compared to larger livestock. Perfect for sustainable farming.</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-chart-line"></i>
+          </div>
+          <h3>Fast Returns</h3>
+          <p>Quick reproduction cycle and rapid growth. Ideal for small farmers looking for efficient livestock with quick returns.</p>
+        </div>
       </div>
     </div>
   </section>
 
+  <!-- Products Section -->
   <section id="products">
-    <h2 style="text-align:center; padding-top:8px;">Products &amp; Availability</h2>
-    <div class="cards">
-      <div class="card">
-        <img src="images/Rabbit5.jpg" alt="Breeding Rabbits">
-        <p><strong>Breeding Rabbits</strong><br>Available on request</p>
+    <div class="container">
+      <div class="section-title">
+        <h2>Products &amp; Services</h2>
       </div>
-      <div class="card">
-        <img src="images/Rabbit6.jpg" alt="Rabbit Meat">
-        <p><strong>Rabbit Meat</strong><br>Pre-orders only</p>
-      </div>
-      <div class="card">
-        <img src="images/Rabbit7.jpg" alt="Organic Manure">
-        <p><strong>Organic Manure</strong><br>Limited supply</p>
+      
+      <div class="products-grid">
+        <div class="product-card">
+          <div class="product-img">
+            <img src="images/Rabbit5.jpg" alt="Breeding Rabbits">
+          </div>
+          <div class="product-info">
+            <h3>Breeding Rabbits</h3>
+            <p>High-quality breeding stock for starting or expanding your rabbit farm. Healthy, productive breeds selected for optimal performance.</p>
+            <span class="availability">Available on request</span>
+          </div>
+        </div>
+        
+        <div class="product-card">
+          <div class="product-img">
+            <img src="images/Rabbit6.jpg" alt="Rabbit Meat">
+          </div>
+          <div class="product-info">
+            <h3>Fresh Rabbit Meat</h3>
+            <p>Fresh, lean rabbit meat processed under hygienic conditions. Perfect for restaurants, hotels, and health-conscious consumers.</p>
+            <span class="availability">Pre-orders only</span>
+          </div>
+        </div>
+        
+        <div class="product-card">
+          <div class="product-img">
+            <img src="images/Rabbit7.jpg" alt="Organic Manure">
+          </div>
+          <div class="product-info">
+            <h3>Organic Fertilizer</h3>
+            <p>Rich organic manure for your garden or farm. Nutrient-dense fertilizer that improves soil structure and plant growth.</p>
+            <span class="availability">Limited supply</span>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
+  <!-- Gallery Section -->
   <section id="gallery">
-    <h2 style="text-align:center; padding-top:8px;">Farm Gallery</h2>
-    <div class="gallery">
-      <img src="images/Rabbit8.jpg" alt="Rabbit 8">
-      <img src="images/Rabbit9.jpg" alt="Rabbit 9">
-      <img src="images/Rabbit10.jpg" alt="Rabbit 10">
-      <img src="images/Rabbit11.jpg" alt="Rabbit 11">
-      <img src="images/Rabbit12.jpg" alt="Rabbit 12">
-      <img src="images/Rabbit13.jpg" alt="Rabbit 13">
-      <img src="images/Rabbit14.jpg" alt="Rabbit 14">
+    <div class="container">
+      <div class="section-title">
+        <h2>Farm Gallery</h2>
+      </div>
+      
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <img src="images/Rabbit8.jpg" alt="Rabbit Farm">
+          <div class="gallery-overlay"></div>
+        </div>
+        <div class="gallery-item">
+          <img src="images/Rabbit9.jpg" alt="Healthy Rabbits">
+          <div class="gallery-overlay"></div>
+        </div>
+        <div class="gallery-item">
+          <img src="images/Rabbit10.jpg" alt="Rabbit Housing">
+          <div class="gallery-overlay"></div>
+        </div>
+        <div class="gallery-item">
+          <img src="images/Rabbit11.jpg" alt="Farm Setup">
+          <div class="gallery-overlay"></div>
+        </div>
+        <div class="gallery-item">
+          <img src="images/Rabbit12.jpg" alt="Rabbit Care">
+          <div class="gallery-overlay"></div>
+        </div>
+        <div class="gallery-item">
+          <img src="images/Rabbit13.jpg" alt="Breeding Area">
+          <div class="gallery-overlay"></div>
+        </div>
+        <div class="gallery-item">
+          <img src="images/Rabbit14.jpg" alt="Farm Operations">
+          <div class="gallery-overlay"></div>
+        </div>
+      </div>
     </div>
   </section>
 
+  <!-- Contact Section -->
   <section id="contact">
-    <h2 style="text-align:center; padding-top:8px;">Contact</h2>
-    <p style="text-align:center;">
-      📧 <strong>namupalapaulus@gmail.com</strong><br>
-      📱 <strong>+264 81 8988 127</strong><br>
-      📍 Unit 2352, Goreangab, Kariba Street, Windhoek, Namibia
-    </p>
+    <div class="container">
+      <div class="section-title">
+        <h2>Contact Us</h2>
+      </div>
+      
+      <div class="contact-container">
+        <div class="contact-info">
+          <h3 style="color: var(--accent-color); margin-bottom: 20px;">Get In Touch</h3>
+          <p style="margin-bottom: 25px; opacity: 0.9;">Interested in rabbit farming or our products? Contact us for more information, pricing, or to place an order.</p>
+          
+          <div class="contact-details">
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <div class="contact-text">
+                <h4>Email</h4>
+                <p>namupalapaulus@gmail.com</p>
+              </div>
+            </div>
+            
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-phone"></i>
+              </div>
+              <div class="contact-text">
+                <h4>Phone</h4>
+                <p>+264 81 8988 127</p>
+              </div>
+            </div>
+            
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <div class="contact-text">
+                <h4>Location</h4>
+                <p>Unit 2352, Goreangab, Kariba Street, Windhoek, Namibia</p>
+              </div>
+            </div>
+            
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-building"></i>
+              </div>
+              <div class="contact-text">
+                <h4>Parent Company</h4>
+                <p>A subsidiary of Small Giant Investments cc</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="contact-form">
+          <h3>Quick Inquiry</h3>
+          <form id="inquiryForm">
+            <div class="form-group">
+              <input type="text" placeholder="Your Name" required>
+            </div>
+            <div class="form-group">
+              <input type="email" placeholder="Your Email" required>
+            </div>
+            <div class="form-group">
+              <input type="tel" placeholder="Phone Number">
+            </div>
+            <div class="form-group">
+              <select required>
+                <option value="">Interest</option>
+                <option value="breeding">Breeding Rabbits</option>
+                <option value="meat">Rabbit Meat</option>
+                <option value="manure">Organic Fertilizer</option>
+                <option value="consultation">Farming Consultation</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <textarea placeholder="Your Message" required></textarea>
+            </div>
+            <button type="submit" class="submit-btn">
+              <i class="fas fa-paper-plane"></i> Send Message
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
   </section>
 
+  <!-- Footer -->
   <footer>
-    © 2026 Rabbitman — a subsidiary of Small Giant Investments cc
+    <div class="footer-content">
+      <img class="footer-logo" src="images/smallgiantlogo.png" alt="Small Giant Logo">
+      
+      <div class="footer-links">
+        <a href="#top">Home</a>
+        <a href="#why">Why Rabbit Farming</a>
+        <a href="#products">Products</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#contact">Contact</a>
+      </div>
+      
+      <div class="copyright">
+        <p>© 2026 Rabbitman — A subsidiary of Small Giant Investments cc</p>
+        <p style="margin-top: 10px;">Sustainable Rabbit Farming Solutions | Windhoek, Namibia</p>
+      </div>
+    </div>
   </footer>
 
-  <a class="whatsapp" href="https://wa.me/264818988127" target="_blank" rel="noopener">
-    WhatsApp Us
-  </a>
-
+  <!-- JavaScript -->
+  <script>
+    // Mobile Menu Toggle
+    document.getElementById('mobileMenuBtn').addEventListener('click', function() {
+      document.getElementById('navLinks').classList.toggle('active');
+    });
+    
+    // Close mobile menu when clicking a link
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', function() {
+        document.getElementById('navLinks').classList.remove('active');
+      });
+    });
+    
+    // Form Submission Handler
+    document.getElementById('inquiryForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Thank you for your inquiry! We will contact you within 24 hours.');
+      this.reset();
+    });
+    
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        const targetId = this.getAttribute('href');
+        if(targetId === '#') return;
+        
+        const targetElement = document.querySelector(targetId);
+        if(targetElement) {
+          window.scrollTo({
+            top: targetElement.offsetTop - 80,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+  </script>
 </body>
 </html>
