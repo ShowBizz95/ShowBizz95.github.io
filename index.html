@@ -325,6 +325,85 @@
       margin-top: 10px;
     }
     
+    /* ====== FARMING TIPS SECTION ====== */
+    #tips {
+      background-color: var(--white);
+    }
+    
+    .tips-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+      margin-top: 40px;
+    }
+    
+    .tip-card {
+      background: var(--light-color);
+      border-radius: 12px;
+      padding: 30px;
+      flex: 1;
+      min-width: 300px;
+      max-width: 500px;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+      border-left: 5px solid var(--secondary-color);
+    }
+    
+    .tip-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    }
+    
+    .tip-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+      gap: 15px;
+    }
+    
+    .tip-icon {
+      background-color: var(--secondary-color);
+      color: var(--white);
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+    
+    .tip-card h3 {
+      color: var(--primary-color);
+      font-size: 1.3rem;
+    }
+    
+    .tip-content ul {
+      list-style-type: none;
+      padding-left: 0;
+    }
+    
+    .tip-content li {
+      padding: 8px 0;
+      border-bottom: 1px dashed rgba(0, 0, 0, 0.1);
+      position: relative;
+      padding-left: 25px;
+    }
+    
+    .tip-content li:before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: var(--secondary-color);
+      font-weight: bold;
+    }
+    
+    .tip-content li:last-child {
+      border-bottom: none;
+    }
+    
     /* ====== GALLERY SECTION ====== */
     .gallery-grid {
       display: grid;
@@ -603,6 +682,10 @@
       .gallery-grid {
         grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
       }
+      
+      .tip-card {
+        min-width: 100%;
+      }
     }
     
     @media (max-width: 576px) {
@@ -637,6 +720,12 @@
         height: 50px;
         font-size: 1.5rem;
       }
+      
+      .tip-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+      }
     }
   </style>
 </head>
@@ -663,6 +752,7 @@
       <a href="#top">Home</a>
       <a href="#why">Why Rabbit Farming</a>
       <a href="#products">Products</a>
+      <a href="#tips">Farming Tips</a>
       <a href="#gallery">Gallery</a>
       <a href="#contact">Contact</a>
     </div>
@@ -754,6 +844,97 @@
             <span class="availability">Limited supply</span>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Farming Tips Section -->
+  <section id="tips">
+    <div class="container">
+      <div class="section-title">
+        <h2>Rabbit Farming Tips</h2>
+      </div>
+      
+      <div class="tips-container">
+        <div class="tip-card">
+          <div class="tip-header">
+            <div class="tip-icon">
+              <i class="fas fa-home"></i>
+            </div>
+            <h3>Housing & Shelter</h3>
+          </div>
+          <div class="tip-content">
+            <ul>
+              <li>Provide 0.5-1 m² space per rabbit</li>
+              <li>Ensure good ventilation but avoid drafts</li>
+              <li>Use wire mesh flooring for hygiene</li>
+              <li>Keep shelter dry and protected from elements</li>
+              <li>Provide nesting boxes for pregnant does</li>
+              <li>Clean hutches regularly to prevent diseases</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="tip-card">
+          <div class="tip-header">
+            <div class="tip-icon">
+              <i class="fas fa-utensils"></i>
+            </div>
+            <h3>Feeding & Nutrition</h3>
+          </div>
+          <div class="tip-content">
+            <ul>
+              <li>Provide fresh, clean water daily</li>
+              <li>Feed high-quality pellets as base diet</li>
+              <li>Supplement with fresh greens and hay</li>
+              <li>Avoid sudden changes in diet</li>
+              <li>Provide mineral blocks for essential nutrients</li>
+              <li>Monitor food intake for health indicators</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="tip-card">
+          <div class="tip-header">
+            <div class="tip-icon">
+              <i class="fas fa-heartbeat"></i>
+            </div>
+            <h3>Health & Care</h3>
+          </div>
+          <div class="tip-content">
+            <ul>
+              <li>Vaccinate against common diseases</li>
+              <li>Check for signs of illness daily</li>
+              <li>Maintain proper hygiene in living areas</li>
+              <li>Handle rabbits gently to reduce stress</li>
+              <li>Trim nails regularly if not wearing down naturally</li>
+              <li>Isolate sick animals immediately</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="tip-card">
+          <div class="tip-header">
+            <div class="tip-icon">
+              <i class="fas fa-baby"></i>
+            </div>
+            <h3>Breeding & Reproduction</h3>
+          </div>
+          <div class="tip-content">
+            <ul>
+              <li>Breed does at 5-6 months of age</li>
+              <li>Gestation period is 28-31 days</li>
+              <li>Provide privacy for nesting mothers</li>
+              <li>Wean kits at 4-6 weeks old</li>
+              <li>Keep breeding records for management</li>
+              <li>Allow does to rest between litters</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <div style="text-align: center; margin-top: 40px; font-style: italic; color: var(--text-light);">
+        <p><i class="fas fa-lightbulb" style="color: var(--accent-color); margin-right: 8px;"></i> These tips are based on successful rabbit farming practices. For personalized advice, <a href="#contact" style="color: var(--secondary-color); font-weight: 600;">contact our experts</a>.</p>
       </div>
     </div>
   </section>
@@ -872,6 +1053,7 @@
                 <option value="meat">Rabbit Meat</option>
                 <option value="manure">Organic Fertilizer</option>
                 <option value="consultation">Farming Consultation</option>
+                <option value="tips">Farming Tips/Advice</option>
               </select>
             </div>
             <div class="form-group">
@@ -895,6 +1077,7 @@
         <a href="#top">Home</a>
         <a href="#why">Why Rabbit Farming</a>
         <a href="#products">Products</a>
+        <a href="#tips">Farming Tips</a>
         <a href="#gallery">Gallery</a>
         <a href="#contact">Contact</a>
       </div>
