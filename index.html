@@ -602,6 +602,29 @@
       opacity: 0.8;
     }
     
+    /* Designer Credit */
+    .designer-credit {
+      margin-top: 25px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .designer-credit a {
+      color: var(--accent-color);
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 0.9rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: var(--transition);
+    }
+    
+    .designer-credit a:hover {
+      color: var(--white);
+      transform: translateY(-2px);
+    }
+    
     /* ====== WHATSAPP BUTTON ====== */
     .whatsapp-float {
       position: fixed;
@@ -1085,6 +1108,13 @@
       <div class="copyright">
         <p>© 2026 Rabbitman — A subsidiary of Small Giant Investments cc</p>
         <p style="margin-top: 10px;">Sustainable Rabbit Farming Solutions | Windhoek, Namibia</p>
+      </div>
+      
+      <!-- Designer Credit -->
+      <div class="designer-credit">
+        <a href="https://www.smallgiant.org" target="_blank">
+          <i class="fas fa-code"></i> Designed by Small Giant Group
+        </a>
       </div>
     </div>
   </footer>
